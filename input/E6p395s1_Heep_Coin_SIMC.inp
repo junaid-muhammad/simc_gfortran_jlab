@@ -6,7 +6,7 @@ begin parm experiment
 end parm experiment
 
 begin parm kinematics_main
-  Ebeam = 6391.504  		;  (MeV)
+  Ebeam = 6394.701 		;  (MeV)
   dEbeam = 0.05			;  beam energy variation (%)
   electron_arm = 1              ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms 		
   hadron_arm = 5                ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms

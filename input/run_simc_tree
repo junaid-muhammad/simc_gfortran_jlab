@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Source LT_Sep Package
+#source /u/group/c-pionlt/USERS/junaid/replay_lt_env/bin/activate.csh
+
 # Runs script in the ltsep python package that grabs current path enviroment
 if [[ ${HOSTNAME} = *"cdaq"* ]]; then
     PATHFILE_INFO=`python3 /home/cdaq/pionLT-2021/hallc_replay_lt/UTIL_PION/bin/python/ltsep/scripts/getPathDict.py $PWD` # The output of this python script is just a comma separated string
@@ -28,40 +31,41 @@ SIMCPATH=`echo ${PATHFILE_INFO} | cut -d ','  -f16`
 LTANAPATH=`echo ${PATHFILE_INFO} | cut -d ','  -f17`
 
 cd $SIMCPATH
-#source /apps/root/6.22.06/setroot_CUE.bash
+#source /etc/profile.d/modules.sh
+#module unload root
+#source /etc/profile.d/modules.sh
 #module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-#module load root/6.28.10-gcc11.3.1
+#module load root/6.30.04-gcc11.4.0
 #gmake clean
 #gmake
 
 INPUTFILE=$1
 # Run ./simc with the provided input argument
-#echo "Running simc with input argument: $INPUTFILE"
-#./simc << EOF
-#$INPUTFILE.inp
-#EOF
+echo "Running simc with input argument: $INPUTFILE"
+./simc << EOF
+$INPUTFILE.inp
+EOF
 
 cd ${SIMCPATH}/util/root_tree/
-#source /apps/root/6.22.06/setroot_CUE.bash
-# Source the modules environment
 #source /etc/profile.d/modules.sh
+#module unload root
 #module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-#module load root/6.28.10-gcc11.3.1
+#module load root/6.30.04-gcc11.4.0
 #gmake clean
 #gmake
 ./make_root_tree << EOF
 ${INPUTFILE}
 EOF
 
-#cd ${SIMCPATH}
-#cp worksim/$INPUTFILE.root OUTPUT/
+cd ${SIMCPATH}
+cp worksim/$INPUTFILE.root OUTPUT/
 
-#cd ${SIMCPATH}
-#cp worksim/$INPUTFILE.hist OUTPUT/
+cd ${SIMCPATH}
+cp worksim/$INPUTFILE.hist OUTPUT/
 
-#REACTION=$2
-#echo "Reaction selected: $2" 
-#cd recon_hcana/    
-#root -q -l "recon_hcana.C(\"$1\", \"$REACTION\" )"
+REACTION=$2
+echo "Reaction selected: $2" 
+cd recon_hcana/    
+root -q -l "recon_hcana.C(\"$1\", \"$REACTION\" )"
 
 exit 0

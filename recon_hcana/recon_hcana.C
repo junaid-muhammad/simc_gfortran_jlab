@@ -16,6 +16,9 @@
 #include <vector>
 #include "TCutG.h"
 #include "recon_hcana.h"
+#include <TFile.h>
+#include <TTree.h>
+#include <TObjectTable.h>
 
 using namespace std;
 
@@ -434,6 +437,8 @@ void recon_hcana::EventLoop(){
 
     //Calculate electron final momentum 3-vector
     SetCentralAngles(e_th, e_ph);
+    // Apply PionLT OOP offsets (h_oopcentral_offset = +0.0019)
+    hsxptar = hsxptar + 0.0019;
     TransportToLab(kf, hsxptar, hsyptar, kf_vec);
 
     // cout << "kf_vec.X(): " << kf_vec.X() << endl;
@@ -463,6 +468,8 @@ void recon_hcana::EventLoop(){
 
     //Get Detected Particle 4-momentum
     SetCentralAngles(h_th, h_ph);
+    // Apply PionLT OOP offsets (p_oopcentral_offset = -0.00005)
+    ssxptar = ssxptar - 0.00005;
     TransportToLab(Pf, ssxptar, ssyptar, Pf_vec);
 
     if(reaction=="heep"){
