@@ -1,7 +1,7 @@
 /*
  * Description:
  * ================================================================
- * Time-stamp: "2024-06-06 16:29:53 trottar"
+ * Time-stamp: "2024-04-10 18:42:49 trottar"
  * ================================================================
  *
  * Author:  Richard L. Trotta III <trotta@cua.edu>, Carlos Yero <cyero002@fiu.edu, cyero@jlab.org>
@@ -438,13 +438,8 @@ void recon_hcana::EventLoop(){
     //Calculate electron final momentum 3-vector
     SetCentralAngles(e_th, e_ph);
     // Apply PionLT OOP offsets (h_oopcentral_offset = +0.0019)
-    // hsxptar = hsxptar + 0.0019;
+//    hsxptar = hsxptar + 0.0019;
     TransportToLab(kf, hsxptar, hsyptar, kf_vec);
-
-    // Testing with ss(x)yptar
-    // Apply OOP offsets (p_oopcentral_offset = -0.00011)
-    //ssxptar = ssxptar - 0.00011;
-    //TransportToLab(kf, ssxptar, ssyptar, kf_vec);
 
     // cout << "kf_vec.X(): " << kf_vec.X() << endl;
     // cout << "kf_vec.Y(): " << kf_vec.Y() << endl;
@@ -474,14 +469,14 @@ void recon_hcana::EventLoop(){
     //Get Detected Particle 4-momentum
     SetCentralAngles(h_th, h_ph);
     // Apply PionLT OOP offsets (p_oopcentral_offset = -0.00005)
-    // ssxptar = ssxptar - 0.00005;    
+//    ssxptar = ssxptar - 0.00005;
     TransportToLab(Pf, ssxptar, ssyptar, Pf_vec);
 
     if(reaction=="heep"){
       fX.SetVectM(Pf_vec, MP);       //SET FOUR VECTOR OF detected particle
     }else{
-      // For KaonLT, this is mk (kaon)
-      fX.SetVectM(Pf_vec, mk);       //SET FOUR VECTOR OF detected particle      
+      // For PionLT, this is mpi (pion)
+      fX.SetVectM(Pf_vec, mpi);       //SET FOUR VECTOR OF detected particle      
     }
       
     fB = fA1 - fX;                 //4-MOMENTUM OF UNDETECTED PARTICLE 
@@ -534,10 +529,17 @@ void recon_hcana::EventLoop(){
 
     M_recoil = fB.M(); //recoil mass (missing mass)
     
-    // Missing Mass
-    missmass = sqrt(abs((Em*Em)-(Pm*Pm)));
+    //-----If H(e,e'p)
+    if(reaction=="heep"){
+      MM2 = Em*Em - Pm*Pm;
+    }else{
 
-    MM2 = missmass * missmass;
+      // Assumes LH2, will need different equations for LD2 (see hcana/src/THcSecondaryKin.cxx for calculations)
+      // Missing Mass
+      missmass = sqrt(abs((Em*Em)-(Pm*Pm)));
+
+      MM2 = missmass * missmass;
+    }
 
     s = (fQ+fA).M2();
     t = (fQ-fX).M2();
