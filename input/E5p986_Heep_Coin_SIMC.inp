@@ -1,19 +1,19 @@
 ; This is a CTP file
 
 begin parm experiment
-  ngen = 300000			;  POS: # of successes; NEG: # of tries
+  ngen = 200000			;  POS: # of successes; NEG: # of tries
   EXPER%charge = 1.0		;  total charge (mC)
 end parm experiment
 
 begin parm kinematics_main
-  Ebeam = 5988.382875  		;  (MeV)
+  Ebeam = 5984.792  		;  (MeV)
   dEbeam = 0.05			;  beam energy variation (%)
   electron_arm = 1              ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms 		
   hadron_arm = 5                ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
-  spec%e%P = 3271.3271		;  e arm central momentum (MeV/c)
-  spec%e%theta = 29.1712   	;  e arm angle setting (degrees)
-  spec%p%P = 3493.6986		;  p arm central momentum (MeV/c)
-  spec%p%theta = 27.4967   	;  p arm angle setting (degrees)
+  spec%e%P = 3271.0		;  e arm central momentum (MeV/c)
+  spec%e%theta = 29.170   	;  e arm angle setting (degrees)
+  spec%p%P = 3493.0		;  p arm central momentum (MeV/c)
+  spec%p%theta = 27.495   	;  p arm angle setting (degrees)
 end parm kinematics_main
 
 begin parm target
@@ -73,18 +73,18 @@ end parm beamandtargetinfo
 ; means spectrometer is positioned at large xptar (i.e. below target, and
 ; thus pointing above target and giving a negative shift to particle's xptar)
 begin parm spect_offset
-  spec%e%offset%x = 0.0         ;  x offset (cm)
-  spec%e%offset%y = 0.0       ;  y offset (cm)
-  spec%e%offset%y = 0.0         ;  y offset (cm)
-  spec%e%offset%z = 0.0          ;  z offset (cm)
-  spec%e%offset%xptar = 0.0    ;  xptar offset (mr)    !x(y)ptar is slope, so
-  spec%e%offset%xptar = 0.0    ;  xptar offset (mr)    !x(y)ptar is slope, so
-  spec%e%offset%yptar = 0.0     ;  yptar offset (mr)    !it's really unitless.
-  spec%p%offset%x = 0.0         ;  x offset (cm)
-  spec%p%offset%y = 0.0         ;  y offset (cm)
-  spec%p%offset%z = 0.0         ;  z offset (cm)
-  spec%p%offset%xptar = 0.0     ;  xptar offset (mr)
-  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
+;  spec%e%offset%x = 0.4         ;  x offset (cm)
+;  spec%e%offset%y = 0.014       ;  y offset (cm)
+;  spec%e%offset%y = 0.30         ;  y offset (cm)
+;  spec%e%offset%z = 0.          ;  z offset (cm)
+;  spec%e%offset%xptar = 1.10    ;  xptar offset (mr)    !x(y)ptar is slope, so
+;  spec%e%offset%xptar = -30.0    ;  xptar offset (mr)    !x(y)ptar is slope, so
+;  spec%e%offset%yptar = 0.0     ;  yptar offset (mr)    !it's really unitless.
+;  spec%p%offset%x = 0.50         ;  x offset (cm)
+;  spec%p%offset%y = -0.40         ;  y offset (cm)
+;  spec%p%offset%z = 0.0         ;  z offset (cm)
+;  spec%p%offset%xptar = 31.5     ;  xptar offset (mr)
+;  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
 end parm spect_offset
 
 begin parm simulate
@@ -97,7 +97,7 @@ begin parm simulate
   cuts%Em%min = 0.      ;  (Em.min=Em.max=0.0 gives wide open cuts)
   cuts%Em%max = 0.      ;  Must be wider than cuts in analysis(elastic or e,e'p)
   using_Eloss = 1       ;  (ONE = TRUE)
-  correct_Eloss = 1     ;  ONE = correct reconstructed events for eloss.
+  correct_Eloss = 0     ;  ONE = correct reconstructed events for eloss.
   correct_raster = 1    ;  ONE = Reconstruct events using 'raster' matrix elements.
   mc_smear = 1          ;  ONE = target & hut mult scatt AND DC smearing.
   deForest_flag = 0     ;  0=sigcc1, 1=sigcc2, -1=sigcc1 ONSHELL

@@ -480,8 +480,8 @@ void recon_hcana::EventLoop(){
     if(reaction=="heep"){
       fX.SetVectM(Pf_vec, MP);       //SET FOUR VECTOR OF detected particle
     }else{
-      // For KaonLT, this is mk (kaon)
-      fX.SetVectM(Pf_vec, mk);       //SET FOUR VECTOR OF detected particle      
+      // For KaonLT, this is mpi (pion)
+      fX.SetVectM(Pf_vec, mpi);       //SET FOUR VECTOR OF detected particle      
     }
       
     fB = fA1 - fX;                 //4-MOMENTUM OF UNDETECTED PARTICLE 
