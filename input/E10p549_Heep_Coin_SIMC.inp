@@ -10,7 +10,7 @@ begin parm kinematics_main
   dEbeam = 0.05			;  beam energy variation (%)
   electron_arm = 1              ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms 		
   hadron_arm = 5                ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
-  spec%e%P = 5878.0		;  e arm central momentum (MeV/c)
+  spec%e%P = 5896.8096		;  e arm central momentum (MeV/c)
   spec%e%theta = 21.74094367   	;  e arm angle setting (degrees)
   spec%p%P = 5505.1150		;  p arm central momentum (MeV/c)
   spec%p%theta = 23.190214091  	;  p arm angle setting (degrees)
