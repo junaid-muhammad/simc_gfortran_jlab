@@ -1,19 +1,19 @@
 ; This is a CTP file
 
 begin parm experiment
-  ngen = 300000			;  POS: # of successes; NEG: # of tries
+  ngen = 200000			;  POS: # of successes; NEG: # of tries
   EXPER%charge = 1.0		;  total charge (mC)
 end parm experiment
 
 begin parm kinematics_main
-  Ebeam = 9176.807783  		;  (MeV)
+  Ebeam = 10546.755  		;  (MeV)
   dEbeam = 0.05			;  beam energy variation (%)
   electron_arm = 1              ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms 		
   hadron_arm = 5                ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
-  spec%e%P = 3738.3738		;  e arm central momentum (MeV/c)
-  spec%e%theta = 31.6462   	;  e arm angle setting (degrees)
-  spec%p%P = 6266.2530		;  p arm central momentum (MeV/c)
-  spec%p%theta = 18.1267   	;  p arm angle setting (degrees)
+  spec%e%P = 5878.0		;  e arm central momentum (MeV/c)
+  spec%e%theta = 21.655   	;  e arm angle setting (degrees)
+  spec%p%P = 5530.0		;  p arm central momentum (MeV/c)
+  spec%p%theta = 23.110   	;  p arm angle setting (degrees)
 end parm kinematics_main
 
 begin parm target
@@ -60,11 +60,11 @@ begin parm beamandtargetinfo
   targ%fr_pattern = 3.          ;  raster pattern: 1=square, 2=circular
   targ%fr1 = 0.2                ;  horizontal size OR inner radius(2)
   targ%fr2 = 0.2                ;  vertical size OR outer radius(2)
-;  targ%xoffset = 0.025          ;  target x-offset (cm): +x = beam right
-;  targ%xoffset = 0.0            ;  target x-offset (cm): +x = beam right
-;  targ%yoffset = 0.0            ;  target y-offset (cm): +y = up
-;  targ%zoffset = 0.221          ;  target z-offset (cm): +z = downstream
-;  targ%zoffset = 0.0            ;  target z-offset (cm): +z = downstream
+;  targ%xoffset = 0.0           ;  target x-offset (cm): +x = beam right
+;  targ%xoffset = 0.0           ;  target x-offset (cm): +x = beam right
+;  targ%yoffset = 0.0           ;  target y-offset (cm): +y = up
+;  targ%zoffset = 0.0           ;  target z-offset (cm): +z = downstream
+;  targ%zoffset = 0.0           ;  target z-offset (cm): +z = downstream
                                 ;   zreal = znominal + zoffset
 end parm beamandtargetinfo
 
@@ -73,18 +73,18 @@ end parm beamandtargetinfo
 ; means spectrometer is positioned at large xptar (i.e. below target, and
 ; thus pointing above target and giving a negative shift to particle's xptar)
 begin parm spect_offset
-  spec%e%offset%x = 0.0         ;  x offset (cm)
-  spec%e%offset%y = 0.0       ;  y offset (cm)
-  spec%e%offset%y = 0.0         ;  y offset (cm)
-  spec%e%offset%z = 0.0          ;  z offset (cm)
-  spec%e%offset%xptar = 0.0    ;  xptar offset (mr)    !x(y)ptar is slope, so
-  spec%e%offset%xptar = 0.0    ;  xptar offset (mr)    !x(y)ptar is slope, so
-  spec%e%offset%yptar = 0.0     ;  yptar offset (mr)    !it's really unitless.
-  spec%p%offset%x = 0.0         ;  x offset (cm)
-  spec%p%offset%y = 0.0         ;  y offset (cm)
-  spec%p%offset%z = 0.0         ;  z offset (cm)
-  spec%p%offset%xptar = 0.0     ;  xptar offset (mr)
-  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
+;  spec%e%offset%x = 0.0         ;  x offset (cm)
+;  spec%e%offset%y = 0.0         ;  y offset (cm)
+;  spec%e%offset%y = 0.0         ;  y offset (cm)
+;  spec%e%offset%z = 0.0         ;  z offset (cm)
+;  spec%e%offset%xptar = 0.0     ;  xptar offset (mr)    !x(y)ptar is slope, so
+;  spec%e%offset%xptar = 0.0     ;  xptar offset (mr)    !x(y)ptar is slope, so
+;  spec%e%offset%yptar = 0.0     ;  yptar offset (mr)    !it's really unitless.
+;  spec%p%offset%x = 0.0         ;  x offset (cm)
+;  spec%p%offset%y = 0.0         ;  y offset (cm)
+;  spec%p%offset%z = 0.0         ;  z offset (cm)
+;  spec%p%offset%xptar = 0.0     ;  xptar offset (mr)
+;  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
 end parm spect_offset
 
 begin parm simulate

@@ -1,8 +1,5 @@
 #! /bin/bash
 
-# Source LT_Sep Package
-#source /u/group/c-pionlt/USERS/junaid/replay_lt_env/bin/activate.csh
-
 # Runs script in the ltsep python package that grabs current path enviroment
 if [[ ${HOSTNAME} = *"cdaq"* ]]; then
     PATHFILE_INFO=`python3 /home/cdaq/pionLT-2021/hallc_replay_lt/UTIL_PION/bin/python/ltsep/scripts/getPathDict.py $PWD` # The output of this python script is just a comma separated string
@@ -31,11 +28,7 @@ SIMCPATH=`echo ${PATHFILE_INFO} | cut -d ','  -f16`
 LTANAPATH=`echo ${PATHFILE_INFO} | cut -d ','  -f17`
 
 cd $SIMCPATH
-#source /etc/profile.d/modules.sh
-#module unload root
-#source /etc/profile.d/modules.sh
-#module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-#module load root/6.30.04-gcc11.4.0
+#source /apps/root/6.22.06/setroot_CUE.bash
 #gmake clean
 #gmake
 
@@ -47,10 +40,7 @@ $INPUTFILE.inp
 EOF
 
 cd ${SIMCPATH}/util/root_tree/
-#source /etc/profile.d/modules.sh
-#module unload root
-#module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-#module load root/6.30.04-gcc11.4.0
+#source /apps/root/6.22.06/setroot_CUE.bash
 #gmake clean
 #gmake
 ./make_root_tree << EOF
