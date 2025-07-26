@@ -32,7 +32,7 @@
         real*8 epicm,ppicm,ppicmx,ppicmy,ppicmz		!p_hadron in C.M.
         real*8 ebeamcm,pbeamcm,pbeamcmx,pbeamcmy,pbeamcmz !p_beam in C.M.
         real*8 etarcm,ptarcm,ptarcmx,ptarcmy,ptarcmz	!p_fermi in C.M.
-        real*8 thetacm,phicm,phiqn,jacobian,jac_old
+        real*8 thetacm,phicm,phiqn,epscm,jacobian,jac_old
 	real*8 Wgev, Q2gev, E0, cthcm, sig0, fac1
 
 	real*8 sig_multipole,sig_blok,sig_param04,sig_param_3000,sig_param_2021
@@ -54,7 +54,7 @@ cdg	data low_w_flag /.FALSE./	!Assume high W kinematics to start
      &		epicm,ppicm,ppicmx,ppicmy,ppicmz,
      &		ebeamcm,pbeamcm,pbeamcmx,pbeamcmy,pbeamcmz,
      &		etarcm,ptarcm,ptarcmx,ptarcmy,ptarcmz,
-     &		thetacm,phicm,phiqn,jacobian,jac_old)
+     &		thetacm,phicm,phiqn,epscm,jacobian,jac_old)
 
 	main%thetacm = thetacm
 	main%phicm = phicm

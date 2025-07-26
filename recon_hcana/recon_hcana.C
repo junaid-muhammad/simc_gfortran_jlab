@@ -128,7 +128,7 @@ void recon_hcana::ProductionReadTree(){
   tree->SetBranchAddress("Q2", &Q2);
   tree->SetBranchAddress("W", &W);
   tree->SetBranchAddress("epsilon", &epsilon);
-  tree->SetBranchAddress("epscm", &epscm);  
+  tree->SetBranchAddress("epsiloni", &epsiloni);  
   tree->SetBranchAddress("Em", &Em);
   tree->SetBranchAddress("Pm", &Pm);
   tree->SetBranchAddress("thetapq", &thetapq);
@@ -153,9 +153,9 @@ void recon_hcana::ProductionReadTree(){
   tree->SetBranchAddress("Q2i", &Q2i);
   tree->SetBranchAddress("Wi", &Wi);
   tree->SetBranchAddress("ti", &ti);
-  tree->SetBranchAddress("phipqi", &phipqi);
-  tree->SetBranchAddress("saghai", &saghai);
-  tree->SetBranchAddress("factor", &factor);
+  tree->SetBranchAddress("phicm", &phicm);
+//  tree->SetBranchAddress("saghai", &saghai);
+//  tree->SetBranchAddress("factor", &factor);
   
   newTree->Branch("hsdelta", &hsdelta, "hsdelta/F");
   newTree->Branch("hsyptar", &hsyptar, "hsyptar/F");
@@ -186,7 +186,7 @@ void recon_hcana::ProductionReadTree(){
   newTree->Branch("Q2", &Q2, "Q2/F");
   newTree->Branch("W", &W, "W/F");
   newTree->Branch("epsilon", &epsilon, "epsilon/F");
-  newTree->Branch("epscm", &epscm, "epscm/F");  
+  newTree->Branch("epsiloni", &epsiloni, "epsiloni/F");  
   newTree->Branch("Em", &Em, "Em/F");
   newTree->Branch("Pm", &Pm, "Pm/F");
   newTree->Branch("thetapq", &thetapq, "thetapq/F");
@@ -211,9 +211,9 @@ void recon_hcana::ProductionReadTree(){
   newTree->Branch("Q2i", &Q2i, "Q2i/F");
   newTree->Branch("Wi", &Wi, "Wi/F");
   newTree->Branch("ti", &ti, "ti/F");
-  newTree->Branch("phipqi", &phipqi, "phipqi/F");
-  newTree->Branch("saghai", &saghai, "saghai/F");
-  newTree->Branch("factor", &factor, "factor/F");
+  newTree->Branch("phicm", &phicm, "phicm/F");
+//  newTree->Branch("saghai", &saghai, "saghai/F");
+//  newTree->Branch("factor", &factor, "factor/F");
   newTree->Branch("paero_z_det", &paero_z_det, "paero_z_det/F");
   newTree->Branch("paero_x_det", &paero_x_det, "paero_x_det/F");
   newTree->Branch("paero_y_det", &paero_y_det, "paero_y_det/F");  
@@ -282,7 +282,7 @@ void recon_hcana::HeepReadTree(){
   tree->SetBranchAddress("Q2", &Q2);
   tree->SetBranchAddress("W", &W);
   tree->SetBranchAddress("epsilon", &epsilon);
-  tree->SetBranchAddress("epscm", &epscm);  
+  tree->SetBranchAddress("epsiloni", &epsiloni);  
   tree->SetBranchAddress("Em", &Em);
   tree->SetBranchAddress("Pm", &Pm);
   tree->SetBranchAddress("thetapq", &thetapq);
@@ -329,7 +329,7 @@ void recon_hcana::HeepReadTree(){
   newTree->Branch("Q2", &Q2, "Q2/F");
   newTree->Branch("W", &W, "W/F");
   newTree->Branch("epsilon", &epsilon, "epsilon/F");
-  newTree->Branch("epscm", &epscm, "epscm/F");  
+  newTree->Branch("epsiloni", &epsiloni, "epsiloni/F");  
   newTree->Branch("Em", &Em, "Em/F");
   newTree->Branch("Pm", &Pm, "Pm/F");
   newTree->Branch("thetapq", &thetapq, "thetapq/F");

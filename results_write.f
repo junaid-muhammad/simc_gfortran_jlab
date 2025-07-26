@@ -150,16 +150,18 @@ c	  ntu(11) = vertex%p%xptar			!mr
 	  ntu(50) = vertex%Q2/1.e6
 	  ntu(51) = main%w/1.e3
 	  ntu(52) = main%t/1.e6
-	  ntu(53) = main%phi_pq
+	  ntu(53) = main%phicm
+	  ntu(54) = main%thetacm
+	  ntu(55) = main%epsilon
 	  if(using_tgt_field) then
-	     ntu(54) = recon%theta_tarq
-	     ntu(55) = recon%phi_targ
-	     ntu(56) = recon%beta
-	     ntu(57) = recon%phi_s
-	     ntu(58) = recon%phi_c
-	     ntu(59) = main%beta
-	     ntu(60) = vertex%phi_s
-	     ntu(61) = vertex%phi_c	     
+	     ntu(56) = recon%theta_tarq
+	     ntu(57) = recon%phi_targ
+	     ntu(58) = recon%beta
+	     ntu(59) = recon%phi_s
+	     ntu(60) = recon%phi_c
+	     ntu(61) = main%beta
+	     ntu(62) = vertex%phi_s
+	     ntu(63) = vertex%phi_c
 	     if (doing_kaon) then
 		ntu(62) = ntup%sigcm1 !sigcm - saghai model
 		ntu(63) = ntup%sigcm2 !sigcm - factorized.

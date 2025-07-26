@@ -80,9 +80,9 @@ class recon_hcana
   Float_t Q2i;
   Float_t Wi;
   Float_t ti;
-  Float_t phipqi;
-  Float_t saghai;
-  Float_t factor;
+  Float_t phicm;
+//  Float_t saghai;
+//  Float_t factor;
   
   Float_t hsdelta;
   Float_t hsyptar;
@@ -113,7 +113,7 @@ class recon_hcana
   Float_t Q2;
   Float_t W;
   Float_t epsilon;
-  Float_t epscm;
+  Float_t epsiloni;
   Float_t Em;
   Float_t Pm;
   Float_t thetapq;

@@ -138,24 +138,28 @@ c	endif
 	  m = m+1
 	  NtupleTag(m) = 'ti'		! 52
 	  m = m+1
-	  NtupleTag(m) = 'phipqi'	! 53
+	  NtupleTag(m) = 'phicm'	! 53
+	  m = m+1
+	  NtupleTag(m) = 'thetacm' ! 54
+	  m = m+1
+	  NtupleTag(m) = 'epsiloni'	! 55
 	  if(using_tgt_field) then
 	     m = m+1
-	     NtupleTag(m) = 'th_tarq' ! 54
-	     m = m+1 
-	     NtupleTag(m) = 'phitarq' ! 55 
+	     NtupleTag(m) = 'th_tarq' ! 56
 	     m = m+1
-	     NtupleTag(m) = 'beta' ! 56
+	     NtupleTag(m) = 'phitarq' ! 57
 	     m = m+1
-	     NtupleTag(m) = 'phis' ! 57
+	     NtupleTag(m) = 'beta' ! 58
 	     m = m+1
-	     NtupleTag(m) = 'phic' ! 58
+	     NtupleTag(m) = 'phis' ! 59
 	     m = m+1
-	     NtupleTag(m) = 'betai' ! 59
+	     NtupleTag(m) = 'phic' ! 60
 	     m = m+1
-	     NtupleTag(m) = 'phisi' ! 60
+	     NtupleTag(m) = 'betai' ! 61
 	     m = m+1
-	     NtupleTag(m) = 'phici' ! 61
+	     NtupleTag(m) = 'phisi' ! 62
+	     m = m+1
+	     NtupleTag(m) = 'phici' ! 63
 	  endif
 	  if (doing_kaon) then
 	    m = m+1
