@@ -521,7 +521,7 @@ CDG For now assume sigL(pi+)=sigL(pi-)
 * Purpose:
 * Fit that reproduces Fpi1 (larger Q2)and Fpi2 and Brauel separated xsec data.
 * while reproducing Bebek unseparated data.
-* The Fpi1 low Q2 data isn't fit terribly well, but not so bad (mostly, sigma_l is
+* The Fpi1 low Q2 data is not fit terribly well, but not so bad (mostly, sigma_l is
 * a little big).
 * Fit gives dsigma/dt/dphi_cm, which is returned as sig_param_3000 [ub/MeV^2-rad].
 

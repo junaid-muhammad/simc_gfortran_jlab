@@ -161,12 +161,12 @@ c	endif
 	     m = m+1
 	     NtupleTag(m) = 'phici' ! 63
 	  endif
-	  if (doing_kaon) then
-	    m = m+1
-	    NtupleTag(m) = 'saghai'	! 54
-	    m = m+1
-	    NtupleTag(m) = 'factor'	! 55
-	 endif
+c	  if (doing_kaon) then
+c	    m = m+1
+c	    NtupleTag(m) = 'saghai'	! 54
+c	    m = m+1
+c	    NtupleTag(m) = 'factor'	! 55
+c	 endif
 	 if(doing_pizero) then
 	     m = m+1
 	     NtupleTag(m) = 'xcal_gamma1'

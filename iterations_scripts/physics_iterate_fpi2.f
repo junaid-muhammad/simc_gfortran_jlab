@@ -214,10 +214,17 @@ c       Fit parameters.
 	   sigt = (fitpar(1)/Q2_gev)+(fitpar(2)/(Q2_gev**2))
 c	   print*,"sigt", sigt,fitpar(1)/Q2_gev,fitpar(2)/(Q2_gev**2)
 
-           sigl = (fitpar(5)*Q2_gev
-     1	      *exp((fitpar(6)-fitpar(7)*log(Q2_gev))*abs(t_gev)))
-     2        /(1+fitpar(8)*Q2_gev+fitpar(9)*(Q2_gev**2))**2
+c       sigt = fitpar(1) / Q2_gev * exp(fitpar(2) * Q2_gev**2)
+c     1        * exp(fitpar(3) * abs(t_gev))
+
+c       sigl = (fitpar(5)*Q2_gev
+c     1	      *exp((fitpar(6)-fitpar(7)*log(Q2_gev))*abs(t_gev)))
+c     2        /(1+fitpar(8)*Q2_gev+fitpar(9)*(Q2_gev**2))**2
 c	   print*,"sigl", sigl,fitpar(5)*Q2_gev,fitpar(6),fitpar(7)*log(Q2_gev),fitpar(8)*Q2_gev,fitpar(9)*(Q2_gev**2)
+
+       sigl = (fitpar(5) + fitpar(6)/Q2_gev) * abs(t_gev) /
+     1        (abs(t_gev) + mpig**2)**2 * exp(fitpar(7) * abs(t_gev)) *
+     2        (Q2_gev / (1+fitpar(8)*Q2_gev+fitpar(9)*(Q2_gev**2))**2)
 
 	   siglt=(exp(fitpar(10)+(fitpar(11)*abs(t_gev)/sqrt(Q2_gev)))
      1       +fitpar(12)+(fitpar(13)/(Q2_gev**2)))*sin(thetacm)

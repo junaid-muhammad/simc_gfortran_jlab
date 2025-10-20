@@ -162,15 +162,15 @@ c	  ntu(11) = vertex%p%xptar			!mr
 	     ntu(61) = main%beta
 	     ntu(62) = vertex%phi_s
 	     ntu(63) = vertex%phi_c
-	     if (doing_kaon) then
-		ntu(62) = ntup%sigcm1 !sigcm - saghai model
-		ntu(63) = ntup%sigcm2 !sigcm - factorized.
-	     endif
-	  else
-	     if (doing_kaon) then
-		ntu(54) = ntup%sigcm1 !sigcm - saghai model
-		ntu(55) = ntup%sigcm2 !sigcm - factorized.
-	     endif
+c	     if (doing_kaon) then
+c		ntu(62) = ntup%sigcm1 !sigcm - saghai model
+c		ntu(63) = ntup%sigcm2 !sigcm - factorized.
+c	     endif
+c	  else
+c	     if (doing_kaon) then
+c		ntu(54) = ntup%sigcm1 !sigcm - saghai model
+c		ntu(55) = ntup%sigcm2 !sigcm - factorized.
+c	     endif
 	  endif
 	  if(doing_pizero) then
 	     ntu(54) = ntup%xcal_gamma1
