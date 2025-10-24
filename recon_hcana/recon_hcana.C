@@ -477,6 +477,9 @@ void recon_hcana::EventLoop(){
     // ssxptar = ssxptar - 0.000082;    
     TransportToLab(Pf, ssxptar, ssyptar, Pf_vec);
 
+      /////////////////////////////////////
+      // HARD CODED // VALUES FOR MASSES //
+      /////////////////////////////////////
     if(reaction=="heep"){
       fX.SetVectM(Pf_vec, MP);       //SET FOUR VECTOR OF detected particle
     }else{
@@ -553,57 +556,25 @@ void recon_hcana::EventLoop(){
      **** End of SHMS ****
      *********************/
     // Variable to see geometric cuts at end of spectrometer
-//    pend_z_det = 300.0; // Approx. end of SHMS (units of cm)
-//    pend_x_det = ssxfp + pend_z_det*ssxpfp;
-//    pend_y_det = ssyfp + pend_z_det*ssypfp;
+    pend_z_det = 300.0; // Approx. end of SHMS (units of cm)
+    pend_x_det = ssxfp + pend_z_det*ssxpfp;
+    pend_y_det = ssyfp + pend_z_det*ssypfp;
     
     /**********************
      **** SHMS AEROGEL ****
      **********************/
-//    paero_z_det = 231.0; // Front? of SHMS aerogel (units of cm), see PARAM/SHMS/AERO/KaonLT_PARAM/paero_geom.param
-//    paero_x_det = ssxfp + paero_z_det*ssxpfp;
-//    paero_y_det = ssyfp + paero_z_det*ssypfp;
-
-//    if (
-//	(InSIMCFilename.Contains("Q4p4W2p74")) || // High and low epsilon
-//	(InSIMCFilename.Contains("Q3p0W3p14")) || // High and low epsilon
-//	(InSIMCFilename.Contains("Q5p5W3p02"))    // High and low epsilon
-//	){
-      
-      // SHMS Aero Geom for n = 1.011 (DEF-files/PRODUCTION/KaonLT_DEF/Paero_1p011/Offline_Physics_Coin_Cuts.def)
-      // shmsAeroxposalln    P.aero.xAtAero > -45 && P.aero.xAtAero < 45
-      // shmsAeroyposalln	   P.aero.yAtAero > -30 && P.aero.yAtAero < 30
-//      paero_tray_cut = (paero_x_det > -45.0) & (paero_x_det < 45.0) & (paero_y_det > -30) & (paero_y_det < 30);
-      
-//    }else{
-
-      // SHMS Aero Geom for n = All except 1.011 (see DEF-files/PRODUCTION/KaonLT_DEF/Offline_Physics_Coin_Cuts.def)
-      // shmsAeroxposalln    P.aero.xAtAero > -55 && P.aero.xAtAero < 55
-      // shmsAeroyposalln	   P.aero.yAtAero > -50 && P.aero.yAtAero < 50
-//      paero_tray_cut = (paero_x_det > -55.0) & (paero_x_det < 55.0) & (paero_y_det > -50) & (paero_y_det < 50);
-
-//    }
+    paero_z_det = 231.0; // Front? of SHMS aerogel (units of cm), see PARAM/SHMS/AERO/KaonLT_PARAM/paero_geom.param
+    paero_x_det = ssxfp + paero_z_det*ssxpfp;
+    paero_y_det = ssyfp + paero_z_det*ssypfp;
     
     /**********************
      **** SHMS HGCer ****
      **********************/
     // HGCer Hole cut is now defined in lt_analysis script to be consistent with data procedure.
     // These variables are used to apply such cut.
-//    phgcer_z_det = 156.27; // Front? of SHMS HGcer (units of cm), see PARAM/SHMS/HGCER/KaonLT_PARAM/phgcer_geom.param
-//    phgcer_x_det = ssxfp + phgcer_z_det*ssxpfp;
-//    phgcer_y_det = ssyfp + phgcer_z_det*ssypfp;
-    
-//    if (!(paero_tray_cut)){
-      //cout << "Event outside geometric acceptance..." << endl;
-//      continue; // Skip events outside geometric acceptance
-//    }
-
-    //----------
-    
-    // cout << "Pmx: " << Pmx << endl;
-    // cout << "Pmy: " << Pmy << endl;
-    // cout << "Pmz: " << Pmz << endl;
-    // cout << "Pm: " << Pm << endl;
+    phgcer_z_det = 156.27; // Front? of SHMS HGcer (units of cm), see PARAM/SHMS/HGCER/KaonLT_PARAM/phgcer_geom.param
+    phgcer_x_det = ssxfp + phgcer_z_det*ssxpfp;
+    phgcer_y_det = ssyfp + phgcer_z_det*ssypfp;
     
     newTree->Fill();  
   }
