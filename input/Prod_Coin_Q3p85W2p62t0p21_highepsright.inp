@@ -91,6 +91,8 @@ begin parm spect_offset
 ;  spec%p%offset%z = 0.0         ;  z offset (cm)
 ;  spec%p%offset%xptar = 31.5     ;  xptar offset (mr)
 ;  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
+  spec%e%offset%xptar = 1.875    ;  xptar offset (mr)    !x(y)ptar is slope, so
+  spec%p%offset%xptar = -0.155    ;  xptar offset (mr)
 end parm spect_offset
 
 begin parm simulate
